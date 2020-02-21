@@ -14,7 +14,7 @@ public class Binario{
         entrada.close();
 
         while (numero != 0){
-            bin[cont] = numero % 10;    // Quando termina de separa, fica ao contrario
+            bin[cont] = numero % 10;    // Quando termina de separar, fica ao contrario
             numero /= 10;
             cont++;
         }
