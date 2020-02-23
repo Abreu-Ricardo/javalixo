@@ -20,7 +20,8 @@ public class Min{
                 menor = vetor[i];
             }
         }
-
+    
+        entrada.close();
         System.out.println(menor);
     }
 }
