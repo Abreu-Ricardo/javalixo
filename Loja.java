@@ -1,17 +1,29 @@
- import java.util.Scanner;
+import java.util.Scanner;
 
     public class Loja{
         public static void main(String[] args) {
             
-            System.out.println("Numero de clientes -->");
+           //System.out.println("Numero de clientes -->");
+            
+            Conta cliente = new Conta(); 
             
             Scanner entrada = new Scanner(System.in);
-            int num_de_clientes = entrada.nextInt();
+
+            cliente.Numero_da_Conta = entrada.nextInt();
+            cliente.Saldo_do_Mes = entrada.nextInt();
+            cliente.Cobranca = entrada.nextInt();
+            cliente.Creditos_aplicados = entrada.nextInt();
+            cliente.Limite = entrada.nextInt();
             
-            Conta cliente = new Conta(); // Criar um Vetor de objetos para os clientes
+            entrada.close();
             
-            for (int i = 0; i < num_de_clientes; i++){
-            }
+            int resul = Conta.novosaldo(cliente.Saldo_do_Mes, cliente.Cobranca, cliente.Creditos_aplicados);
+
+            if (resul > cliente.Limite)
+                System.out.println("Limite de credito excedido");
+            
+            else
+                System.out.println(resul);
         }
     }
 
@@ -22,9 +34,12 @@
         int Creditos_aplicados = 0;
         int Limite = 0;
 
-        public int novosaldo(){
+        public static int novosaldo(int saldo, int cobranca, int creditos){
             int nsaldo = 0;
-            nsaldo = Saldo_do_Mes + Cobranca - Creditos_aplicados;
+            //System.out.print("3 coisas" + saldo + cobranca + creditos);
+            System.out.println();
+
+            nsaldo = saldo + cobranca - creditos;
             return nsaldo;
         }
     }
