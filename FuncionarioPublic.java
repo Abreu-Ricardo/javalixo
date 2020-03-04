@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class Funcionario{
+public class FuncionarioPublic{
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
