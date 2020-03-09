@@ -1,26 +1,30 @@
 package teste;
 
-public class Funcionario{
+public class Funcionario {
     String nome;
     double salario; // Inicío do salário, pode alterar
     String entrada;
     String Rg;
 
-    public static void recebeAumento(Funcionario func, double aumento){
+    Funcionario() {
+        this.salario = 1045.0;
+    }
+
+    void recebeAumento(Funcionario func, double aumento) {
         func.salario += aumento;
     }
 
-    public static double calculaGanhoAnual(Funcionario func){
+    double calculaGanhoAnual() {
         double ganhoAnual;
-        ganhoAnual = func.salario * 12;
+        ganhoAnual = this.salario * 12;
 
         return ganhoAnual;
     }
 
-    public static void mostra(Funcionario func){
-        System.out.println(func.nome);
-        System.out.println(func.salario);
-        System.out.println(func.entrada);
-        System.out.println(func.Rg);
+    void mostra() {
+        System.out.println(nome);
+        System.out.println(salario);
+        System.out.println(entrada);
+        System.out.println(Rg);
     }
 }
